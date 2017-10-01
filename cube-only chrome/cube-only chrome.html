@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Cube</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/cube.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="start()">
+<div class="star" id="star">
+<div class="reg" id="reg">
+<form action="" method="post" target="iframe">
+<input type="text" class="regusername" id="regusername" placeholder="username">
+<input type="password" class="regpassword" id="regpassword" placeholder="password">
+<input type="submit" class="regsubmit" id="regsubmit" value="Register"  onclick="checkreg()">
+</form>
+</div>
+</div>
+<div class="login" id="login">
+<form action="" method="post" target ="iframe">
+<input type="text" class="logusername" id="logusername" placeholder="username">
+<input type="password" class="logpassword" id="logpassword" placeholder="password">
+<input type="submit" class="logsubmit" id="logsubmit" value="Login" onclick="checklog()">
+</form>
+<button onclick = "goreg()" class="goreg" id="goreg" ><i>Not a member? Join now!</i></button>
+</div>
+<div class="path" id="path">
+<div class="cube" id="cube">
+<div class="above" id="above">
+</div>
+<div class="left" id="left">
+</div>
+<div class="mid" id="mid">
+</div>
+<div class="right" id="right">
+<p class="forward" id="forward">Forward</p>
+</div>
+<div class="bottom" id="bottom">
+</div>
+</div>
+</div>
+<iframe name="iframe" frameborder="0" scrolling="no">
+</iframe>
+</body>
+<script>
+	var forwards = document.getElementById('forward');
+	function start(){
+		setTimeout(function(){
+		cube.style.transform = "translateZ(250px)";
+		cube.style.backgroundColor = "black";
+		cube.style.transition = "all 4s";
+		mid.style.opacity = "0";
+		mid.style.transition = "all 1s 4s";
+		login.style.zIndex = "3";
+		login.style.opacity = "1";
+		login.style.transition = "zIndex 1s 4s";
+		login.style.transition = "opacity 1s 4s";
+		},1000);
+		above.style.transform = "translateY(150px) translateZ(150px) rotateX(-90deg)";
+		above.style.transition = "all 1s";
+		left.style.transform = "translateX(150px) translateZ(150px) rotateY(90deg)";
+		left.style.transition = "all 1s";
+		right.style.transform = "translateX(-150px) translateZ(150px) rotateY(-90deg)";
+		right.style.transition = "all 1s";
+		bottom.style.transform = "translateY(-150px) translateZ(150px) rotateX(90deg)";
+		bottom.style.transition = "all 1s";
+		forwards.style.opacity = "1";
+		forwards.style.transition = "all 2s";
+	}
+
+	function goreg(){
+		login.style.opacity = "0";
+		login.style.transition = "opacity 1s";
+		mid.style.opacity = "1";
+		mid.style.transform = "rotateX(90deg) scaleY(50)";
+		mid.style.transition = "opacity 1s";
+		mid.style.transition = "transform 1s 1s";
+		cube.style.transform = "translateZ(316px) ";
+		cube.style.backgroundColor = "rgba(0,0,0,0)";
+		cube.style.transition = "all 2s 2s";
+		star.style.opacity = "1";
+		star.style.zIndex = "4";
+		star.style.transition = "all 1s 4s";
+		reg.style.opacity = "1";
+		reg.style.zIndex = "4";
+		reg.style.transition = "all 1s 3s";
+	}
+	function checkreg(){
+		if(regusername.value === ""){
+			alert("Input your Fuckkking username!!");
+		}
+		if(regusername.value.toLowerCase().indexOf("ycjk")>-1&&regusername.value.toLowerCase().indexOf("god")<0){
+			alert("Plz combine YCJK with GOD");
+		}
+		if(regpassword.value === ""){
+			alert("Input your Fuckkking password!!");
+		}
+	}
+	function checklog(){
+/*		var name = logusername.value.toLowerCase();*/
+		if(logusername.value === ""){
+			alert("Input your Fuckkking username!!");
+		}
+		if(logpassword.value === ""){
+			alert("Input your Fuckkking password!!");
+		}
+	}
+</script>
+</html>
