@@ -1,1 +1,1 @@
-Chrome only!!!!!
+Chrome only
